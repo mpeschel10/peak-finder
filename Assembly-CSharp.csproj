@@ -36,9 +36,30 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\CameraFollowsPlayer.cs" />
+     <Compile Include="Assets\QuickOutline\Scripts\Outline.cs" />
+     <Compile Include="Assets\EnableIfXR.cs" />
+     <Compile Include="Assets\Scripts\ClickToReveal.cs" />
+     <Compile Include="Assets\Wireframe\Examples\Scripts\AutoRotate.cs" />
+     <Compile Include="Assets\Scripts\CameraSelector.cs" />
+     <Compile Include="Assets\DisableIfXR.cs" />
      <Compile Include="Assets\Scripts\WASDMovement.cs" />
-     <Compile Include="Assets\Scripts\PlayerController.cs" />
+     <Compile Include="Assets\Scripts\OutlineLayerColors.cs" />
+     <Compile Include="Assets\Wireframe\ImageEffect\WireframeImageEffect.cs" />
+     <Compile Include="Assets\MakePillars.cs" />
+     <Compile Include="Assets\PillarVisibleFlag.cs" />
+     <None Include="Assets\Wireframe\Shaders\WireframeTransparent.shader" />
+     <None Include="Assets\Wireframe\Shaders\WireframeShaded-Unlit.shader" />
+     <None Include="Assets\QuickOutline\Resources\Shaders\OutlineMask.shader" />
+     <None Include="Assets\Wireframe\Shaders\Resources\WireframeTransparentCulled-Global.shader" />
+     <None Include="Assets\Wireframe\Shaders\WireframeTransparentCulled.shader" />
+     <None Include="Assets\Wireframe\Shaders\Wireframe.cginc" />
+     <None Include="Assets\Wireframe\Shaders\Wireframe.shader" />
+     <None Include="Assets\QuickOutline\Readme.txt" />
+     <None Include="Assets\OccaSoftware\Crosshairs\Readme.txt" />
+     <None Include="Assets\Wireframe\Shaders\Resources\WireframeTransparent-Global.shader" />
+     <None Include="Assets\Wireframe\Shaders\Resources\Wireframe-Global.shader" />
+     <None Include="Assets\QuickOutline\Resources\Shaders\OutlineFill.shader" />
+     <None Include="Assets\Wireframe\Shaders\Resources\WireframeShaded-Unlit-Global.shader" />
     <Reference Include="UnityEngine">
         <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.26f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>
@@ -806,6 +827,10 @@
     <ProjectReference Include="Unity.XR.Interaction.Toolkit.Samples.StarterAssets.csproj">
       <Project>{80d5dc7c-679c-9f27-63c2-0d76c31e251f}</Project>
       <Name>Unity.XR.Interaction.Toolkit.Samples.StarterAssets</Name>
+    </ProjectReference>
+    <ProjectReference Include="OccaSoftware.Crosshairs.Editor.csproj">
+      <Project>{970d7b7a-0258-26fb-95d3-3dbd7f5fd3d3}</Project>
+      <Name>OccaSoftware.Crosshairs.Editor</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

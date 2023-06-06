@@ -17,11 +17,13 @@ public class WASDMovement : MonoBehaviour
     }
 
     Vector2 clickLocation, lookPlayerWants;
+    Vector3 clickRotation;
     public void OnLook(InputAction.CallbackContext context)
     {
         InputActionPhase phase = context.phase;
         if (phase == InputActionPhase.Started)
         {
+            clickRotation = transform.rotation.eulerAngles;
             clickLocation = context.action.ReadValue<Vector2>();
         } else if (phase == InputActionPhase.Performed)
         {
@@ -50,12 +52,13 @@ public class WASDMovement : MonoBehaviour
         } else {
             currentSpeed = 0;
         }
+
         if (lookPlayerWants != Vector2.zero)
         {
-            Quaternion oldRotation = transform.rotation;
             float xRotation = lookPlayerWants.y * -lookSpeedY;
             float yRotation = lookPlayerWants.x * lookSpeedX;
-            transform.rotation = Quaternion.Euler(oldRotation.x + xRotation, oldRotation.y + yRotation, oldRotation.z);
+            Quaternion newRotation = Quaternion.Euler(clickRotation.x + xRotation, clickRotation.y + yRotation, clickRotation.z);
+            transform.rotation = newRotation;
         }
     }
 }
