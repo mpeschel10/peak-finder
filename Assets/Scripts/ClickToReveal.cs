@@ -9,7 +9,21 @@ public class ClickToReveal : MonoBehaviour, CameraSelector.Hoverable, CameraSele
     public GameObject GetGameObject() { return gameObject; }
 
     [SerializeField] GameObject visiblePillar;
+    public int index;
     public void Click()
+    {
+        MakePillars parent = gameObject.transform.parent.parent.gameObject.GetComponent<MakePillars>();
+        ClickToReveal[] neighbors = parent.hiddenPillars;
+        #nullable enable
+        ClickToReveal? leftNeighbor = index > 0 ? neighbors[index - 1] : null;
+        ClickToReveal? rightNeighbor = index < neighbors.Length - 1 ? neighbors[index + 1] : null;
+        leftNeighbor?.Reveal();
+        this.Reveal();
+        rightNeighbor?.Reveal();
+        #nullable disable
+    }
+
+    public void Reveal()
     {
         gameObject.SetActive(false);
         visiblePillar.SetActive(true);

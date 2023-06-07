@@ -37,16 +37,16 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\QuickOutline\Scripts\Outline.cs" />
-     <Compile Include="Assets\EnableIfXR.cs" />
+     <Compile Include="Assets\Scripts\EnableIfXR.cs" />
      <Compile Include="Assets\Scripts\ClickToReveal.cs" />
      <Compile Include="Assets\Wireframe\Examples\Scripts\AutoRotate.cs" />
      <Compile Include="Assets\Scripts\CameraSelector.cs" />
-     <Compile Include="Assets\DisableIfXR.cs" />
+     <Compile Include="Assets\Scripts\MakePillars.cs" />
+     <Compile Include="Assets\Scripts\PillarVisibleFlag.cs" />
+     <Compile Include="Assets\Scripts\DisableIfXR.cs" />
      <Compile Include="Assets\Scripts\WASDMovement.cs" />
      <Compile Include="Assets\Scripts\OutlineLayerColors.cs" />
      <Compile Include="Assets\Wireframe\ImageEffect\WireframeImageEffect.cs" />
-     <Compile Include="Assets\MakePillars.cs" />
-     <Compile Include="Assets\PillarVisibleFlag.cs" />
      <None Include="Assets\Wireframe\Shaders\WireframeTransparent.shader" />
      <None Include="Assets\Wireframe\Shaders\WireframeShaded-Unlit.shader" />
      <None Include="Assets\QuickOutline\Resources\Shaders\OutlineMask.shader" />
