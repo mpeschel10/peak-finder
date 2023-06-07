@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MakePillars : MonoBehaviour
 {
-    float[] pillarHeights = { 0.01f, 0.1f, 0.2f, 0.3f, 0.4f, 0.5f, 0.6f, 0.7f, 0.8f, 0.9f, 1f};
+    float[] pillarHeights = { 0.4f, 0.9f, 1f, 0.9f, 0.7f, 0.3f, 0.2f, 0.01f, 0.1f, 0.2f, 0.3f, 0.4f, 0.5f, 0.6f, 0.7f, 0.8f, 0.9f, 1f, 0.8f, 0.5f};
     public ClickToReveal[] hiddenPillars;
     
     // Start is called before the first frame update
