@@ -6,47 +6,35 @@ using UnityEngine.XR;
 public class EnableIfXR : MonoBehaviour
 {
     static bool? isXR;
-    [SerializeField] Behaviour target;
-    void Awake()
+    [SerializeField] Object target;
+    void Start()
     {
-        if (target == null)
+        if (target == null) target = gameObject;
+        if (IsThisJustFantasy())
         {
-            if (IsThisJustFantasy())
+            Debug.Log(target + " is enabled since XR is available.");
+        } else
+        {
+            Debug.Log("Disabling " + target + " since XR is not available.");
+            if (target is Collider collider)          { collider.enabled = false;         }
+            else if (target is Behaviour behaviour)   { behaviour.enabled = false;        }
+            else if (target is GameObject gameObject) { gameObject.SetActive(false);      }
+            else
             {
-                Debug.Log(gameObject + " is enabled since XR is available.");
-            } else {
-                gameObject.SetActive(false);
-                Debug.Log("Disabling " + gameObject + " since XR is not available.");
-            }
-        } else {
-            if (IsThisJustFantasy())
-            {
-                Debug.Log(target + " is enabled since XR is available.");
-            } else
-            {
-                target.enabled = false;
-                Debug.Log("Disabling " + target + " since XR is not available.");
+                throw new System.Exception("Unknown type to disable " + target + "; supported types are Collider, Behaviour, and GameObject.");
             }
         }
     }
 
-    public static bool IsThisTheRealWorld()
+    public static bool IsThisTheRealLife() { return !IsThisJustFantasy(); }
+    public static bool IsThisJustFantasy()
     {
         if (isXR == null)
         {
-            isXR = true;
             List<XRDisplaySubsystem> xrDisplaySubsystems = new List<XRDisplaySubsystem>();
             SubsystemManager.GetInstances<XRDisplaySubsystem>(xrDisplaySubsystems);
-            foreach (var xrDisplay in xrDisplaySubsystems)
-            {
-                if (xrDisplay.running)
-                {
-                    isXR = false;
-                    break;
-                }
-            }
+            isXR = xrDisplaySubsystems.Count != 0;
         }
-        return (bool) isXR;
+        return isXR.Value;
     }
-    public static bool IsThisJustFantasy() { return !IsThisTheRealWorld(); }
 }

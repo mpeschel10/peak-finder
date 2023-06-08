@@ -81,7 +81,7 @@ public class CameraSelector : MonoBehaviour
     Draggable dragging;
     void DoDrags(RaycastHit hitInfo)
     {
-        if (hitInfo.collider != null && Input.GetMouseButtonDown(1))
+        if (hitInfo.collider != null && Input.GetMouseButtonDown(0))
         {
             if (dragging != null) // We missed a GetMouseButtonUp() somewhere; normalize.
             {
@@ -98,7 +98,7 @@ public class CameraSelector : MonoBehaviour
                 dragging.Grab(grabTransform);
             }
         }
-        if (dragging != null && Input.GetMouseButtonUp(1))
+        if (dragging != null && Input.GetMouseButtonUp(0))
         {
             dragging.Ungrab();
             dragging = null;

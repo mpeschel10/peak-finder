@@ -10,17 +10,20 @@ public class ClickToReveal : MonoBehaviour, CameraSelector.Hoverable, CameraSele
 
     [SerializeField] GameObject visiblePillar;
     public int index;
+    public static bool revealPairs = false;
     public void Click()
     {
-        MakePillars parent = gameObject.transform.parent.parent.gameObject.GetComponent<MakePillars>();
+        MakePillars parent = transform.parent.parent.gameObject.GetComponent<MakePillars>();
         ClickToReveal[] neighbors = parent.hiddenPillars;
-        #nullable enable
-        ClickToReveal? leftNeighbor = index > 0 ? neighbors[index - 1] : null;
-        ClickToReveal? rightNeighbor = index < neighbors.Length - 1 ? neighbors[index + 1] : null;
-        leftNeighbor?.Reveal();
         this.Reveal();
-        rightNeighbor?.Reveal();
-        #nullable disable
+        
+        if (revealPairs)
+        {
+            if (index > 0 && neighbors[index - 1].gameObject.activeSelf)
+                neighbors[index - 1].Reveal();
+            else if (index + 1 < neighbors.Length)
+                neighbors[index + 1].Reveal();
+        }
     }
 
     public void Reveal()
