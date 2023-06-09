@@ -160,6 +160,7 @@ GameObject:
   - component: {fileID: 7094510403626226415}
   - component: {fileID: 7094510403626226403}
   - component: {fileID: 7094510403626226412}
+  - component: {fileID: 1147578984353673811}
   m_Layer: 7
   m_Name: RulerEnd
   m_TagString: Untagged
@@ -275,6 +276,18 @@ MonoBehaviour:
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
+--- !u!114 &1147578984353673811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7094510403626226409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e564330d6ff8e0e4fa7fc1646c2cd13c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7094510403711713291
 GameObject:
   m_ObjectHideFlags: 0
@@ -289,6 +302,7 @@ GameObject:
   - component: {fileID: 7094510403711713289}
   - component: {fileID: 7094510403711713293}
   - component: {fileID: 7094510403711713294}
+  - component: {fileID: 8162755386168840047}
   m_Layer: 7
   m_Name: RulerStart
   m_TagString: Untagged
@@ -404,6 +418,18 @@ MonoBehaviour:
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
+--- !u!114 &8162755386168840047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7094510403711713291}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e564330d6ff8e0e4fa7fc1646c2cd13c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7094510404122437094
 GameObject:
   m_ObjectHideFlags: 0

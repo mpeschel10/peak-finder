@@ -37,24 +37,25 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\QuickOutline\Scripts\Outline.cs" />
+     <Compile Include="Assets\Scripts\ToggleShowHide.cs" />
      <Compile Include="Assets\Scripts\EnableIfXR.cs" />
      <Compile Include="Assets\Scripts\ClickToReveal.cs" />
-     <Compile Include="Assets\ShowMenuOnY.cs" />
+     <Compile Include="Assets\Scripts\ShowMenuOnY.cs" />
      <Compile Include="Assets\Wireframe\Examples\Scripts\AutoRotate.cs" />
      <Compile Include="Assets\Scripts\CameraSelector.cs" />
      <Compile Include="Assets\Scripts\MakePillars.cs" />
      <Compile Include="Assets\Scripts\PillarVisibleFlag.cs" />
      <Compile Include="Assets\Scripts\DisableIfXR.cs" />
+     <Compile Include="Assets\Scripts\Tags.cs" />
      <Compile Include="Assets\Scripts\Follower.cs" />
-     <Compile Include="Assets\Scripts\WASDMovement.cs" />
-     <Compile Include="Assets\MenuShowHide.cs" />
+     <Compile Include="Assets\Scripts\FreeMovement.cs" />
+     <Compile Include="Assets\Scripts\MenuShowHide.cs" />
      <Compile Include="Assets\Scripts\FreeDraggable.cs" />
      <Compile Include="Assets\Scripts\OutlineLayerColors.cs" />
+     <Compile Include="Assets\Scripts\ToggleRevealPairs.cs" />
      <Compile Include="Assets\Wireframe\ImageEffect\WireframeImageEffect.cs" />
      <Compile Include="Assets\Scripts\RulerBodyFollower.cs" />
-     <Compile Include="Assets\ToggleShowHide.cs" />
-     <Compile Include="Assets\ToggleRevealPairs.cs" />
-     <Compile Include="Assets\Tags.cs" />
+     <Compile Include="Assets\Scripts\LayeredOutline.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\Wireframe\Shaders\WireframeTransparent.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />

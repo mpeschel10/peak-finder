@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class ClickToReveal : MonoBehaviour, CameraSelector.Hoverable, CameraSelector.Clickable
 {
-    public void Hover() { GetComponent<Outline>().AddLayer("can-click"); }
-    public void Unhover() { GetComponent<Outline>().SubtractLayer("can-click"); }
+    public void Hover() { GetComponent<LayeredOutline>().AddLayer("can-click"); }
+    public void Unhover() { GetComponent<LayeredOutline>().SubtractLayer("can-click"); }
     public GameObject GetGameObject() { return gameObject; }
 
     [SerializeField] GameObject visiblePillar;

@@ -80,14 +80,7 @@ public class Outline : MonoBehaviour {
 
   private bool needsUpdate;
 
-  OutlineLayerColors layerColors;
-  private int[] layerCounts;
-
   void Awake() {
-    layerColors = GameObject.FindGameObjectWithTag("GameController").GetComponent<OutlineLayerColors>();
-    if (layerColors == null) throw new Exception("Could not find GameController tagged object with OutlineLayerColors component.");
-    layerCounts = new int[layerColors.names.Length];
-
     // Cache renderers
     renderers = GetComponentsInChildren<Renderer>();
 
@@ -135,40 +128,6 @@ public class Outline : MonoBehaviour {
     }
   }
 
-  public void AddLayer(string layerName)
-  {
-    OutlineLayerColors.OutlineLayerColor layerColor = layerColors.dictionary[layerName];
-    layerCounts[layerColor.index]++;
-    if (layerCounts[layerColor.index] == 1)
-    {
-      ShowFirstLayer();
-    }
-  }
-
-  public void SubtractLayer(string layerName)
-  {
-    OutlineLayerColors.OutlineLayerColor layerColor = layerColors.dictionary[layerName];
-    if (layerCounts[layerColor.index] <= 0) throw new Exception("Cannot remove Outline layer " + layerName + "; there are none left.");
-    layerCounts[layerColor.index]--;
-    if (layerCounts[layerColor.index] == 0)
-    {
-      ShowFirstLayer();
-    }
-  }
-
-  void ShowFirstLayer()
-  {
-    for(int i = 0; i < layerCounts.Length; i++)
-    {
-      if (layerCounts[i] > 0)
-      {
-        this.enabled = true;
-        this.OutlineColor = layerColors.array[i].color;
-        return;
-      }
-    }
-    this.enabled = false;
-  }
 
   void Update() {
     if (needsUpdate) {

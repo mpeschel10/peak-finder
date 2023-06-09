@@ -5,8 +5,8 @@ using UnityEngine;
 public class FreeDraggable : MonoBehaviour, CameraSelector.Hoverable, CameraSelector.Draggable
 {
 
-    public void Hover() { gameObject.GetComponent<Outline>().AddLayer("can-drag"); }
-    public void Unhover() { gameObject.GetComponent<Outline>().SubtractLayer("can-drag"); }
+    public void Hover() { gameObject.GetComponent<LayeredOutline>().AddLayer("can-drag"); }
+    public void Unhover() { gameObject.GetComponent<LayeredOutline>().SubtractLayer("can-drag"); }
     public GameObject GetGameObject() { return gameObject; }
 
     Transform grabTransform;
